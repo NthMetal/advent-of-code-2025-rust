@@ -41,22 +41,22 @@ fn main() {
             continue;
         };
 
-        println!("first_left: {:?} last_left: {:?}", first_left_str, last_left_str);
+        // println!("first_left: {:?} last_left: {:?}", first_left_str, last_left_str);
 
         let mut current_char_len = 1;
         // let mut current_value = first_str.chars().nth(0).and_then(|c| c.to_digit(10)).expect("first_str must have chars");
         let mut current_value = 1;
         while (current_value as u64) <= last_left {
             let current_val_string = current_value.to_string();
-
-            // let max = ((last_str.len() as f32) / (current_val_string.len() as f32)).ceil() as usize;
-            for i in 2..=10 {
+            // 49046150754
+            let max = ((last_str.len() as f32) / (current_val_string.len() as f32)).ceil() as usize;
+            for i in 2..=max {
                 let Ok(new_value) = current_val_string.repeat(i).parse::<u64>() else {
                     // println!("Repeating {:?}, {:?} times is overflow", current_val_string, i);
                     continue;
                 };
                 if new_value <= last && new_value >= first {
-                    println!("Adding: {:?}", new_value);
+                    // println!("Adding: {:?}", new_value);
                     invalid_ids.push(new_value);
                 }
             }
