@@ -1,12 +1,8 @@
 [workspace]
 members = [
-    "day_1",
-    "day_2",
-    "day_3",
-    "day_4",
-    "day_5",
+    "day_*",
 ]
-default-members = ["day_5"]
+default-members = ["day_6"]
 resolver = "3"
 
 [workspace.dependencies]
